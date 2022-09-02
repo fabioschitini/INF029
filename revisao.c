@@ -228,7 +228,7 @@ int main(){
 int A[n];
 inicio=0;
 fim=n-1;
-while(ini<=fim){
+while(ini<=fim){ logN na base 2+1 +3*(log de n na bse 2+1)=4 logn..
     meio=(fim+inicio)/2;
     if(A[meio==v]){
         achaste!
@@ -240,3 +240,4 @@ while(ini<=fim){
         fim=meio-1;
     }
 }
+logN na base 2+1
