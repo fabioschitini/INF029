@@ -217,3 +217,26 @@ int main(){
         printf("\n");
     }
 }
+
+
+
+
+
+
+//Binario
+
+int A[n];
+inicio=0;
+fim=n-1;
+while(ini<=fim){
+    meio=(fim+inicio)/2;
+    if(A[meio==v]){
+        achaste!
+    }
+    else if(A[meio<v]){
+        inicio=meio+1;
+    }
+    else{
+        fim=meio-1;
+    }
+}
