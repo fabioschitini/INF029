@@ -1,3 +1,22 @@
+#include <stdio.h>
+//questao 1
+
+int soma(int num1, int num2){
+  return num1 + num2;
+}
+
+int main(void) {
+  int num1, num2;
+  
+  printf("Numero 1: ");
+  scanf("%i", &num1);
+
+  printf("Numero 2: ");
+  scanf("%i", &num2);
+
+  printf("A soma eh: %i", soma(num1, num2));
+  return 0;
+}
 //questao 2
 
 #include <stdio.h>
@@ -14,6 +33,33 @@ int main(void) {
   printf(" \nColoque o valor do terceiro numero \n");
   scanf("%f", &c);
   printf("O resultado é:%.2f", subtrai(a, b, c, resultado));
+  return 0;
+}
+
+//questao 3
+
+int fatorial(int num){
+  int fatorial = 1; 
+
+  if (num > 0){
+    for (int i = 0; i < num; i++){
+      fatorial *= num - i;
+    }
+
+    printf("Fatorial: %i", fatorial);
+  }
+
+  else
+    printf("Erro!");
+}
+
+int main(){
+  int num; 
+  
+  printf("Insira o numero: ");
+  scanf("%i", &num);
+
+  fatorial(num);
   return 0;
 }
 
@@ -38,6 +84,48 @@ int main(void) {
     printf("\n %d", f[i]);
   }
 }
+
+//questao 5
+#include <stdio.h>
+/*
+5) Crie um programa que tenha uma função ler4Numeros. Essa função deve ler quatro números do usuário e retornar os quatro números. A função main deve imprimir esses quatro números. Utilize struct para fazer o retorno.
+*/
+
+struct quatnum{
+    int num1;
+    int num2;
+    int num3;
+    int num4;
+  };
+
+struct quatnum ler4Numeros(){
+  struct quatnum numeros;
+  
+  printf("1° numero: ");
+  scanf("%i", &numeros.num1);
+
+  printf("\n2° numero: ");
+  scanf("%i", &numeros.num2);
+  
+  printf("\n3° numero: ");
+  scanf("%i", &numeros.num3);
+  
+  printf("\n4° numero: ");
+  scanf("%i", &numeros.num4);
+
+  return numeros;
+}
+
+int main(){
+  struct quatnum numeros;
+  numeros = ler4Numeros();
+  printf("\n%i", numeros.num1);
+  printf("\n%i", numeros.num2);
+  printf("\n%i", numeros.num3);
+  printf("\n%i", numeros.num4);
+  return 0;
+}
+
 //questao 6
 #include <stdio.h>
 int ler3letras(char *result) {
@@ -52,6 +140,39 @@ int main(void) {
     printf("\n %c", f[i]);
   }
 }
+//questao 7
+#include <stdio.h>
+#include <string.h>
+struct palavra{
+    char palavra1[30];
+    char palavra2[30];
+    char palavra3[30];
+};
+
+struct palavra ler3Palavras(){
+  struct palavra palavras;
+  printf("1° Palavra: ");
+  fgets(palavras.palavra1, 30, stdin);
+
+  printf("\n2° Palavra: ");
+  fgets(palavras.palavra2, 30, stdin);
+
+  printf("\n3° Palavra: ");
+  fgets(palavras.palavra3, 30, stdin);
+
+  return palavras;
+}
+
+int main(){
+  struct palavra palavras = ler3Palavras();
+
+  printf("\nPrimeira: %s", palavras.palavra1);
+  printf("\nSegunda: %s", palavras.palavra2);
+  printf("\nTerceira: %s", palavras.palavra3);
+
+  return 0;
+}
+
 //questao 8
 
 #include <stdio.h>
