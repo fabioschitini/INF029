@@ -29,9 +29,8 @@ for(int i=0;i<n-1;i++){ // n-1
         if(vet[j]>vet[menor]){
             menor=j;}
             int holder=vet[i];
-            menor=j;
             vet[i]=vet[menor];
-            vet[j]=holder;
+            vet[menor]=holder;
         }
     }
 }
