@@ -2,6 +2,10 @@
 #include <stdio.h>
 
 int main() {
+    
+    
+    
+    
  typedef struct alunos{
     int matricula;
     int existe;
@@ -28,7 +32,6 @@ scanf("%d",&idDeletar);
 
 //printf("idDeletar: %d \n",idDeletar);
 if(idDeletar<contador){
-    printf("%d id do crono: \n",alunos[idDeletar].id);
         alunos[idDeletar].existe=0;
 } 
 else{
@@ -41,5 +44,26 @@ for(int m=0;m<contador;m++){
     }
 }
 
+int opc, idopc;
+printf("Selecione o ID do aluno a dar update: ");
+scanf("%i", &idopc);
 
+printf("Selecione a opção [1 = Matricula]: ");
+scanf("%i", &opc);
+
+switch(opc){
+    case 1:
+        printf("Coloque a nova matricula do corno: ");
+        scanf("%d",&alunos[idopc].matricula);
+    break;
+    
+    default:
+        printf("Opção inválida.");
+    break;
+}
+for(int x=0;x<contador;x++){
+ if(alunos[x].existe){
+        printf("%d\n",alunos[x].matricula);
+    }
+}
 }
