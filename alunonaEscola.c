@@ -99,3 +99,21 @@ printf("Selecione a opçao que voce quer editar [1 = Matricula, 2 = SAIR]:");
  }
    
 }
+
+
+
+int main() {
+    // Write C code here
+  int codigo[20];
+  int contador=0;
+  int holder;
+  for(int i=0;i<5;i++){
+      codigo[i]=i;
+      contador++;
+  }
+  int id=2;
+  for (int j=id;id<contador;id++){
+      codigo[j]=codigo[j+1];
+      
+  }
+}
