@@ -2,6 +2,14 @@
 
 #include <stdio.h>
 
+int contadorAluno=0;
+ typedef struct alunos{
+    int matricula;
+    int existe;
+    int id;
+} Aluno;
+    Aluno alunos[999];
+    
 int main() {
     int opc;
     printf("Selecione a opçao [1 = ALUNOS]: ");
@@ -15,25 +23,7 @@ int main() {
             main();
         break;
     }
-}
-
-void aluno(){
-        
- typedef struct alunos{
-    int matricula;
-    int existe;
-    int id;
-} Aluno;
-contador=0;
-    Aluno alunos[999];
- cadrastar(){
-      printf("Colocque a matricula do corno: ");
-    scanf("%d",&alunos[contador].matricula);
-    alunos[contador].id=contador;
-    alunos[contador].existe=1;
-    contador++;
- }
-    int opc;
+       int opc;
     printf("Selecione a opçao [1 = CADASTRAR, 2 = SAIR]: ");
     scanf("%i", &opc);
     switch (opc){
@@ -47,4 +37,65 @@ contador=0;
             printf("Opçao fodase");
         break;
     }
+    
+}
+
+void aluno(){
+ cadrastar(){
+      printf("Colocque a matricula do corno: ");
+    scanf("%d",&alunos[contador].matricula);
+    alunos[contador].id=contador;
+    alunos[contador].existe=1;
+    contador++;
+ }
+ imprimir(){
+     for(int n=0;n<contador;n++){
+        printf("%d \n",alunos[n].matricula);
+}
+ }
+ 
+ deletar(){
+  int idDeletar;
+printf("Coloque o id do corno que voce quer deletar: ");
+scanf("%d",&idDeletar);
+if(idDeletar<contador){
+    printf("%d id do crono: \n",alunos[idDeletar].id);
+        alunos[idDeletar].existe=0;
+} 
+else{
+    printf("Id nao existe foollll\n");
+}
+for(int m=0;m<contador;m++){
+    if(alunos[m].existe){
+        printf("%d\n",alunos[m].matricula);
+    }
+}
+ }
+ update(){
+      int opc,idOpc;
+          printf("Selecione a id do corno");
+          scanf("%d",idOpc);
+          if(idOpc<contador||alunos[idOpc]==0){
+    printf("Id do corno nao existe");
+} 
+else{
+printf("Selecione a opçao que voce quer editar [1 = Matricula, 2 = SAIR]:");
+    scanf("%i", &opc);
+    switch (opc){
+        case 1:
+    printf("Colocque a nova matricula do corno: ");
+    scanf("%d",&alunos[idOpc].matricula);
+        break;
+        case 2:
+            aluno();
+        break;
+        default:
+            printf("Opçao fodase");
+        break;
+    }
+}
+          
+    
+ }
+   
 }
